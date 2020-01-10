@@ -8,7 +8,15 @@
 
 <ion-content>
   <ion-button expand="block" (click)="getWeather('Lille')">Weather for Lille</ion-button>
-  <ion-img expand="block" [src]="getIcon()"></ion-img>
+  <ion-item *ngIf="weatherInfos">
+    <ion-label>
+      {{weatherInfos['weather'][0]['description']}}
+    </ion-label>
+    <ion-thumbnail slot="end">
+      <ion-img [src]="weatherIcon"></ion-img>
+    </ion-thumbnail>
+  </ion-item>
+  
   <ion-item *ngIf="weatherInfos" >
     {{weatherInfos['main']['temp']}}
   </ion-item>
