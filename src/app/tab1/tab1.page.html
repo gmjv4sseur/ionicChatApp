@@ -16,6 +16,15 @@
       <ion-img [src]="weatherIcon"></ion-img>
     </ion-thumbnail>
   </ion-item>
+
+  <ion-item *ngIf="!weatherInfos">
+    <ion-label>
+      Click on the button !
+    </ion-label>
+    <ion-thumbnail slot="end">
+      <ion-img [src]="weatherIcon"></ion-img>
+    </ion-thumbnail>
+  </ion-item>
   
   <ion-item *ngIf="weatherInfos" >
     {{weatherInfos['main']['temp']}}
